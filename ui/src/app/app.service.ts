@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { map } from 'rxjs/operators';
+import { Horse } from './models/horse';
 import { Observable } from 'rxjs/index';
 
 /**
@@ -11,17 +12,15 @@ import { Observable } from 'rxjs/index';
  */
 @Injectable()
 export class AppService {
-  private serviceUrl = '/api/horses';
-  private dataPostTestUrl = '/api/postTest';
 
   constructor(private http: HttpClient) {
   }
 
   /**
    * Makes a http get request to retrieve the welcome message from the backend service.
-   */
-  public getWelcomeMessage() {
-    return this.http.get(this.serviceUrl).pipe(
+  */
+  public getData(url:string): Observable<any> {
+    return this.http.get(url).pipe(
       map(response => response)
     );
   }
@@ -29,7 +28,8 @@ export class AppService {
   /**
    * Makes a http post request to send some data to backend & get response.
    */
-  public sendData(): Observable<any> {
-    return this.http.post(this.dataPostTestUrl, {});
+  public sendData(data: any, url:string): Observable<any> {
+    const headers = { 'Content-Type': 'application/json'}
+    return this.http.post(url, data, {'headers':headers});
   }
 }
