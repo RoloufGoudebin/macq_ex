@@ -43,11 +43,11 @@ object Horse{
         "_id" -> horse._id,
         "_creationDate" -> horse._creationDate.map(date => BSONDateTime(date.getMillis)),
         "_updateDate" -> horse._updateDate.map(date => BSONDateTime(date.getMillis)),
-        "colour" -> horse.name,
+        "name" -> horse.name,
+        "colour" -> horse.colour,
         "speed" -> horse.speed,
         "breed" -> horse.breed,
         "img" -> horse.img
-
       )
     }
   }
