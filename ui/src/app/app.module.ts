@@ -1,19 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { RouteExampleComponent } from './route-example/route-example.component';
 
 import { AppService } from './app.service';
 import { AppHttpInterceptorService } from './http-interceptor.service';
+import { HomeComponent } from './home/home.component';
+import { TableComponent } from './home/table/table.component';
+import { CreateComponent } from './home/create/create.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    RouteExampleComponent
+    HomeComponent,
+    TableComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +28,9 @@ import { AppHttpInterceptorService } from './http-interceptor.service';
       cookieName: 'Csrf-Token',
       headerName: 'Csrf-Token',
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [
     AppService,

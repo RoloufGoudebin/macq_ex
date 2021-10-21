@@ -37,10 +37,4 @@ export class AppComponent {
       this.postRequestResponse = data.content;
     });
   }
-
-  public getHorse(): void {
-    this.appService.getData(this.urlHorses).subscribe((data: Horse[]) => {
-      this.horses = data
-    })
-  }
 }

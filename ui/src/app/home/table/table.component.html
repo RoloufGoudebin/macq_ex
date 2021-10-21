@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Colour</th>
+                    <th scope="col">Speed</th>
+                    <th scope="col">Breed</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="horses">
+                <tr *ngFor="let horse of horses">
+                    <th>{{horse.name}}</th>
+                    <td>{{horse.colour}}</td>
+                    <td>{{horse.speed}}</td>
+                    <td>{{horse.breed}}</td>
+                    <td>{{horse.img}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
