@@ -15,4 +15,6 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   def postTest = Action {
     Ok(Json.obj("content" -> "Post Request Test => Data Sending Success"))
   }
+
+  
 }

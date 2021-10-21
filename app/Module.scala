@@ -1,5 +1,7 @@
 import com.google.inject.AbstractModule
 
+
+
 /**
  * This class is a Guice module that tells Guice how to bind several
  * different types. This Guice module is created when the Play
@@ -12,7 +14,7 @@ import com.google.inject.AbstractModule
  */
 class Module extends AbstractModule {
 
-  override def configure() = {
-  }
 
 }
+
+

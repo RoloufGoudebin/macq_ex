@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/index';
  */
 @Injectable()
 export class AppService {
-  private serviceUrl = '/api/summary';
+  private serviceUrl = '/api/horses';
   private dataPostTestUrl = '/api/postTest';
 
   constructor(private http: HttpClient) {
