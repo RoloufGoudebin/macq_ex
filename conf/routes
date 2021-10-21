@@ -6,8 +6,10 @@ GET     /api/summary                controllers.HomeController.appSummary
 
 
 #CRUD OPERATIONS for horses
-POST    /api/horses                 controllers.HorseController.create() //Create
-GET     /api/horses                 controllers.HorseController.findAll() //Read ALL
-GET     /api/horses/:id             controllers.HorseController.findOne(id: String) //Read One
-PUT     /api/horses/:id             controllers.HorseController.update(id: String) //Read All
-DELETE  /api/horses/:id             controllers.HorseController.delete(id: String) //Delete
++nocsrf
+POST    /api/horses                 controllers.HorseController.create()
++nocsrf
+GET     /api/horses                 controllers.HorseController.findAll()
+GET     /api/horses/:id             controllers.HorseController.findOne(id: String)
+PUT     /api/horses/:id             controllers.HorseController.update(id: String)
+DELETE  /api/horses/:id             controllers.HorseController.delete(id: String)
