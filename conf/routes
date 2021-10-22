@@ -8,8 +8,15 @@ GET     /api/summary                controllers.HomeController.appSummary
 #CRUD OPERATIONS for horses
 +nocsrf
 POST    /api/horses                 controllers.HorseController.create()
-+nocsrf
 GET     /api/horses                 controllers.HorseController.findAll()
 GET     /api/horses/:id             controllers.HorseController.findOne(id: String)
 PUT     /api/horses/:id             controllers.HorseController.update(id: String)
 DELETE  /api/horses/:id             controllers.HorseController.delete(id: String)
+
+#CRUD OPERATIONS for users
++nocsrf
+POST    /api/users                 controllers.UserController.create()
+GET     /api/users                 controllers.UserController.findAll()
+GET     /api/users/:id             controllers.UserController.findOne(id: String)
+PUT     /api/users/:id             controllers.UserController.update(id: String)
+DELETE  /api/users/:id             controllers.UserController.delete(id: String)
