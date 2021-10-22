@@ -47,8 +47,7 @@ class UserController @Inject()(implicit executionContext: ExecutionContext, val 
   }
 
   //Update 
-  def update(
-              id: String):Action[JsValue]  = Action.async(controllerComponents.parsers.json) { implicit request => {
+  def update(id: String):Action[JsValue]  = Action.async(controllerComponents.parsers.json) { implicit request => {
     request.body.validate[User].fold(
       _ => Future.successful(BadRequest("Cannot parse request body")),
       user =>{
