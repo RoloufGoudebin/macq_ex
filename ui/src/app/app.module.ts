@@ -13,6 +13,8 @@ import { TableComponent } from './home/table/table.component';
 import { CreateComponent } from './home/create/create.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { SigninComponent } from './login/signin/signin.component';
+import { SignupComponent } from './login/signup/signup.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     TableComponent,
     CreateComponent,
-    LoginComponent
+    LoginComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
