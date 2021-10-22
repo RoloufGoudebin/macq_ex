@@ -15,26 +15,6 @@ export class AppComponent {
   urlHorses = "/api/horses"
 
   constructor(private appService: AppService) {
-    /*this.appService.getWelcomeMessage().subscribe((data: any) => {
-      this.title = data.content;
-    });*/
-  }
 
-  /**
-   * This method is used to test the post request
-   */
-  public postHorse(): void {
-    let newHorse: Horse;
-    newHorse = {
-      name: "proutttt",
-      colour: "bleue",
-      speed: "200",
-      breed: "moche",
-      img: "prout.be"
-    }
-    console.log(newHorse);
-    this.appService.sendData(newHorse, this.urlHorses).subscribe((data: any) => {
-      this.postRequestResponse = data.content;
-    });
   }
 }
