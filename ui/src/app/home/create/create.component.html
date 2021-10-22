@@ -6,31 +6,64 @@
         </button>
     </div>
     <div class="modal-body">
-        <form>
+        <form [formGroup]="this.form" (ngSubmit)="onSubmit()">
             <div class="form-group">
+
+
                 <label for="name">Name :</label>
                 <div class="input">
-                    <input id="name" class="form-control" placeholder="Name" name="name">
+                    <input class="form-control" placeholder="Name" formControlName="name">
                 </div>
+                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+                    <div *ngIf="name.errors?.required">
+                        Name is required.
+                    </div>
+                </div>
+
+
                 <label for="typeahead-config">Colour :</label>
-                <input id="typeahead-config" type="text" class="form-control" [(ngModel)]="model"
-                    [ngbTypeahead]="search" name="colour" placeholder="Colour" />
+                <input id="typeahead-config" type="text" class="form-control" [ngbTypeahead]="search"
+                    formControlName="colour" placeholder="Colour" />
+                <div *ngIf="colour.invalid && (colour.dirty || colour.touched)" class="text-danger">
+                    <div *ngIf="colour.errors?.required">
+                        Colour is required.
+                    </div>
+                </div>
+
+
                 <label for="name">Speed :</label>
                 <div class="input">
-                    <input id="speed" class="form-control" placeholder="Speed" name="speed">
+                    <input class="form-control" placeholder="Speed" formControlName="speed">
                 </div>
-                <div class="input">
-                    <input id="breed" class="form-control" placeholder="Breed" name="breed">
+                <div *ngIf="speed.invalid && (speed.dirty || speed.touched)" class="text-danger">
+                    <div *ngIf="speed.errors?.required">
+                        Speed is required.
+                    </div>
                 </div>
+
+
+                <label for="name">Breed :</label>
                 <div class="input">
-                    <input id="img" class="form-control" placeholder="img" name="img">
+                    <input class="form-control" placeholder="Breed" formControlName="breed">
+                </div>
+                <div *ngIf="breed.invalid && (breed.dirty || breed.touched)" class="text-danger">
+                    <div *ngIf="breed.errors?.required">
+                        Breed is required.
+                    </div>
+                </div>
+
+
+                <label for="name">Image :</label>
+                <div class="input">
+                    <input class="form-control" placeholder="img" formControlName="img">
                 </div>
 
             </div>
+
+            <div class="row">
+                <button type="submit" class="btn btn-primary mt-3 col-3 mx-auto" [disabled]="!form.valid">Save</button>
+            </div>
         </form>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="submit">Save</button>
     </div>
 </ng-template>
 

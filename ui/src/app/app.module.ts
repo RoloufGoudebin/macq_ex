@@ -11,7 +11,7 @@ import { AppHttpInterceptorService } from './http-interceptor.service';
 import { HomeComponent } from './home/home.component';
 import { TableComponent } from './home/table/table.component';
 import { CreateComponent } from './home/create/create.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     }),
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     AppService,

@@ -10,8 +10,8 @@
                     <th scope="col">Image</th>
                 </tr>
             </thead>
-            <tbody *ngIf="horses">
-                <tr *ngFor="let horse of horses">
+            <tbody *ngIf="this.appService.horses">
+                <tr *ngFor="let horse of this.appService.horses">
                     <th>{{horse.name}}</th>
                     <td>{{horse.colour}}</td>
                     <td>{{horse.speed}}</td>
