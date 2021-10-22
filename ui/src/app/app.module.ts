@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { TableComponent } from './home/table/table.component';
 import { CreateComponent } from './home/create/create.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     AppComponent,
     HomeComponent,
     TableComponent,
-    CreateComponent
+    CreateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
