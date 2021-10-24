@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container pt-5 mt-5">
     <div class="row">
-        <table class="table table-striped">
+        <table class="table table-striped table-image">
             <thead>
                 <tr>
                     <th scope="col">Name</th>
@@ -12,11 +12,13 @@
             </thead>
             <tbody *ngIf="this.appService.horses">
                 <tr *ngFor="let horse of this.appService.horses">
-                    <th>{{horse.name}}</th>
+                    <td>{{horse.name}}</td>
                     <td>{{horse.colour}}</td>
-                    <td>{{horse.speed}}</td>
+                    <td>{{horse.speed}} km/h</td>
                     <td>{{horse.breed}}</td>
-                    <td>{{horse.img}}</td>
+                    <td class="w-25">
+                        <img class="img-fluid img-thumbnail col-6" src="{{horse.img}}">
+                    </td>
                 </tr>
             </tbody>
         </table>

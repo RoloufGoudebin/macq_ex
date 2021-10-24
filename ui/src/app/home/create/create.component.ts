@@ -16,15 +16,13 @@ const listOfColours = colours;
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  styleUrls: ['./create.component.css'],
+  providers: [NgbTypeaheadConfig]
 })
 export class CreateComponent {
-
-  postRequestResponse: string | undefined;
-  closeResult = '';
   public model: any;
+  closeResult = '';
 
-  @Output() newHorseEvent = new EventEmitter<any>();
 
   form = new FormGroup({
     name: new FormControl('', [Validators.required]),
@@ -35,6 +33,7 @@ export class CreateComponent {
   })
 
   constructor(private modalService: NgbModal, config: NgbTypeaheadConfig, private appService: AppService) {
+    config.showHint = true;
   }
 
 
@@ -44,6 +43,7 @@ export class CreateComponent {
 
   onSubmit() {
     this.createHorse();
+    this.modalService.dismissAll()
   }
 
   //create a horse from form and write it in DB
@@ -52,12 +52,11 @@ export class CreateComponent {
     horse = {
       name: this.form.value.name,
       colour: this.form.value.colour,
-      speed: this.form.value.colour,
-      breed: this.form.value.colour,
+      speed: this.form.value.speed,
+      breed: this.form.value.breed,
       img: this.form.value.img
     }
     this.appService.sendDataHorse(horse).subscribe((data: any) => {
-      this.postRequestResponse = data.content;
       this.appService.getHorses();
     });
 

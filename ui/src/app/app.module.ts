@@ -14,7 +14,7 @@ import { CreateComponent } from './home/create/create.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './login/signin/signin.component';
-import { SignupComponent } from './login/signup/signup.component';
+import { SignUpComponent } from './login/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import { SignupComponent } from './login/signup/signup.component';
     CreateComponent,
     LoginComponent,
     SigninComponent,
-    SignupComponent
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

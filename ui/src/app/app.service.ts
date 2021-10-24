@@ -23,24 +23,37 @@ export class AppService {
   /**
    * Makes a http get request to retrieve all the horses from the backend service.
   */
-  public getHorses(): void{
+  public getHorses(): void {
     this.http.get("/api/horses").subscribe((data: any) => {
       this.horses = data;
     })
-    
+
   }
 
   /**
    * Makes a http post request to create a horse to backend.
    */
-  public sendDataHorse(data: any,): Observable<any> {
-    const headers = { 'Content-Type': 'application/json'}
-    return this.http.post("/api/horses", data, {'headers':headers});
+  public sendDataHorse(data: any): Observable<any> {
+    const headers = { 'Content-Type': 'application/json' }
+    return this.http.post("/api/horses", data, { 'headers': headers });
   }
 
-  public getUsers(): void{
+
+  /**
+    * Makes a http get request to retrieve all the users from the backend service.
+   */
+  public getUsers(): void {
     this.http.get("/api/users").subscribe((data: any) => {
       this.users = data;
     })
+  }
+
+
+  /**
+ * Makes a http post request to create an user to backend.
+ */
+  public sendDataUser(data: any): Observable<any> {
+    const headers = { 'Content-Type': 'application/json' }
+    return this.http.post("/api/users", data, { 'headers': headers });
   }
 }
