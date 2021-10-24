@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { Horse } from '../models/horse';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,10 @@ import { Horse } from '../models/horse';
 export class HomeComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private titleService: Title) { }
 
   ngOnInit() {
+
   }
 
 }
